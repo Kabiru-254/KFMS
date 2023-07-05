@@ -1,0 +1,115 @@
+<nav class="sidebar" [ngClass]="{ 'sidebar-hidden': isSidebarHidden }">
+  <div class="sidebar-header">
+    <div class="hide-sidebar">
+      <i *ngIf="!isSidebarHidden" class="material-icons hide-sidebar-button" (click)="toggleSidebar()">chevron_left</i>
+      <i *ngIf="isSidebarHidden" class="material-icons hide-sidebar-button" (click)="toggleSidebar()">chevron_right</i>
+
+    </div>
+    <div class="user-profile">
+
+      <img class="hide-when-sidebar-is-off user-profile__image" [src]="userProfileImage" alt="User Profile Image">
+      <div class="role_div d-flex flex-column align-items-center justify-content-center">
+        <span class="hide-when-sidebar-is-off user-profile__name">{{ username }}</span>
+        <br>
+        <span class="hide-when-sidebar-is-off user-profile__role">{{ role }}</span>
+      </div>
+
+    </div>
+    <div class="user-actions" [ngClass]="{ 'hidden': !showActions }">
+      <a class="user-action" routerLink="/view-profile">
+        <i class="material-icons">person</i>
+        View Profile
+      </a>
+      <a class="hide-when-sidebar-is-off user-action" (click)="logout($event)">
+        <i class="material-icons">exit_to_app</i>
+        Logout
+      </a>
+    </div>
+  </div>
+  <hr>
+  <ul class="sidebar-menu">
+    <li class="hide-when-sidebar-is-off sidebar-menu-item">
+      <a routerLink="/milk-production">
+        <i class="material-icons">local_drink</i>
+        Milk Production
+      </a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a routerLink="/herd-management">
+        <i class="material-icons">pets</i>
+        Herd Management
+      </a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a routerLink="/health-records">
+        <i class="material-icons">local_hospital</i>
+        Health Records
+      </a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a routerLink="/breeding">
+        <i class="material-icons">group</i>
+        Breeding
+      </a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a routerLink="/sales-records">
+        <i class="material-icons">shopping_cart</i>
+        Sales Records
+      </a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a routerLink="/expenses">
+        <i class="material-icons">attach_money</i>
+        Expenses
+      </a>
+    </li>
+    <hr>
+    <li class="sidebar-menu-item report-tab" >
+      <a class="sidebar-menu-item__collapsed" (click)="toggleReportsSubMenu()" role="button"
+         [attr.aria-expanded]="showReportsSubMenu ? 'true' : 'false'"
+         [attr.aria-controls]="'reportsSubMenu'"
+         [ngClass]="{ 'active': showReportsSubMenu }">
+        <i class="material-icons">description</i>
+        Reports
+        <i class="material-icons sidebar-menu-item__arrow" [ngClass]="{ 'down': showReportsSubMenu }">keyboard_arrow_down</i>
+      </a>
+
+      <ul class="sub-menu collapse" id="reportsSubMenu" [ngClass]="{ 'show': showReportsSubMenu }">
+        <li>
+          <a routerLink="/reports/financial-report" routerLinkActive="active">
+            <i class="material-icons">attach_money</i>
+            Financial Report
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/reports/milk-report" routerLinkActive="active">
+            <i class="material-icons">local_drink</i>
+            Milk Report
+          </a>
+        </li>
+        <li>
+          <a routerLink="/reports/herd-report" routerLinkActive="active">
+            <i class="material-icons">pets</i>
+            Herd Report
+          </a>
+        </li>
+        <li>
+          <a routerLink="/reports/health-report" routerLinkActive="active">
+            <i class="material-icons">local_hospital</i>
+            Health Report
+          </a>
+        </li>
+        <li>
+          <a routerLink="/reports/breeding-report" routerLinkActive="active">
+            <i class="material-icons">group</i>
+            Breeding Report
+          </a>
+        </li>
+      </ul>
+    </li>
+
+
+  </ul>
+</nav>

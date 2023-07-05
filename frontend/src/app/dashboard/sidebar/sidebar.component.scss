@@ -1,0 +1,146 @@
+*{
+  color: whitesmoke;
+  transition: .2s ease;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100%;
+  //background-color: #303030;
+  background: linear-gradient(#303030, rgba(0, 0, 0, 0.7)), url("../../../assets/img/dashboard_dp.jpg");
+  //background-image: url("../../../assets/img/dashboard_dp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.sidebar-hidden{
+  width: 60px !important;
+}
+
+
+.sidebar::-webkit-scrollbar {
+  width: 0.5rem; /* Set the width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the background color of the scrollbar track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set the color of the scrollbar thumb */
+  border-radius: 0.25rem; /* Set the border radius of the scrollbar thumb */
+}
+
+.sidebar-header {
+  margin-bottom: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile__image {
+  width: 70px;
+  height: 100px;
+  border-radius: 10%;
+  margin-right: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-profile__name, user-profile__role {
+  font-weight: bold;
+}
+
+
+
+.user-actions {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.user-action {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+
+}
+.user-action .material-icons{
+  margin-right: 3%;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hide-sidebar{
+  position: relative;
+  width: 100%;
+
+}
+.hide-sidebar-button{
+  position: absolute;
+  right: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.sidebar-menu-item {
+  margin-bottom: 10px;
+  //border: 1px solid white;
+  padding: 5px 0 5px 5px;
+}
+.sidebar-menu-item:hover{
+  color: white;
+  letter-spacing: 1px;
+  border-radius: 7px;
+  background-color: #242424;
+}
+.sidebar-menu-item__collapsed{
+  position: relative;
+}
+.sidebar-menu-item__arrow{
+  position: absolute;
+  right: 0;
+
+}
+.sidebar-menu-item a {
+  display: block;
+
+  text-decoration: none;
+}
+
+.sidebar-menu-item i {
+  margin-right: 10px;
+}
+
+.sub-menu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.sub-menu li {
+  margin-bottom: 5px;
+}
+
+.sub-menu a {
+  text-decoration: none;
+}
+
+.report-tab{
+  //border: 1px solid whitesmoke;
+}
+
